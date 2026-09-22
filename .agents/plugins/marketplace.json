@@ -1,0 +1,14 @@
+{
+  "name": "x-skills",
+  "owner": {
+    "name": "X Skills contributors"
+  },
+  "plugins": [
+    {
+      "name": "x-skills",
+      "source": "./.codex-plugin",
+      "description": "Twelve draft-first X workflows for posts, threads, replies, quote-posts, and conversation strategy.",
+      "version": "1.0.0"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "x-skills",
+  "description": "Twelve draft-first X workflows for posts, threads, replies, quote-posts, and conversation strategy.",
+  "version": "1.0.0",
+  "author": {
+    "name": "X Skills contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "x",
+    "content-operations",
+    "agent-skills"
+  ]
+}

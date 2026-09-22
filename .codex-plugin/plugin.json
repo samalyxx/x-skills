@@ -1,0 +1,31 @@
+{
+  "name": "x-skills",
+  "description": "Twelve draft-first X workflows for posts, threads, replies, quote-posts, and conversation strategy.",
+  "version": "1.0.0",
+  "author": {
+    "name": "X Skills contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "x",
+    "content-operations",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "X Skills",
+    "shortDescription": "Draft-first X operations.",
+    "longDescription": "Original evidence-led workflows for posts, threads, replies, quote-posts, and conversation strategy.",
+    "developerName": "X Skills contributors",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read"
+    ],
+    "websiteURL": "https://x.com",
+    "defaultPrompt": [
+      "Draft a X post from these verified notes.",
+      "Create a X content plan from this brief."
+    ]
+  }
+}
