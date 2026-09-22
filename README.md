@@ -2,13 +2,20 @@
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-compatible-7C3AED.svg)](.claude-plugin/plugin.json)
 [![Codex](https://img.shields.io/badge/Codex-compatible-2563EB.svg)](.codex-plugin/plugin.json)
-[![Skills](https://img.shields.io/badge/Agent-Skills-334155.svg)](SKILL.md)
-[![SocialBu MCP](https://img.shields.io/badge/SocialBu-MCP_optional-2563EB.svg)](https://socialbu.com/mcp-server)
+[![Agent Skills](https://img.shields.io/badge/12-platform--specific_skills-334155.svg)](SKILL.md)
+[![SocialBu](https://img.shields.io/badge/SocialBu-MCP_optional-2563EB.svg)](https://socialbu.com/mcp-server)
 [![License](https://img.shields.io/badge/license-MIT-22C55E.svg)](LICENSE)
 
-**X Skills** is a practical, draft-first bundle for posts, threads, replies, quote-posts, and conversation strategy. It turns verified source material into reviewable content and operating decisions without inventing results or claiming access to X.
+**X Skills** is a draft-first operating kit for credible X posts, threads, quote posts, replies, profile copy, and content experiments. Give your agent source material and a goal; it produces reviewable work without inventing results, claiming live X access, or publishing by default.
 
 ![X Skills workflow](assets/x-skills-workflow.svg)
+
+## Start here
+
+1. Install the bundle in Claude Code, Codex, or another `SKILL.md`-compatible agent.
+2. Supply real material: product notes, a source link, customer language, a transcript, or an existing draft.
+3. Ask for one concrete outcome, such as a post, a thread, a reply queue, or a weekly plan.
+4. Review the claims, voice, links, and media before posting. Optionally hand the approved draft to SocialBu for scheduling.
 
 ## Install
 
@@ -24,49 +31,70 @@ codex plugin add x-skills@x-skills
 /plugin install x-skills@x-skills
 ```
 
-Clone this repository if your agent reads `SKILL.md` files directly. No API key is required for drafting or review.
+### Local or any compatible agent
+```bash
+git clone https://github.com/samalyxx/x-skills.git
+cd x-skills
+npx skills add .
+```
 
-## What it includes
+No API key is needed for writing, planning, or review.
 
-| Skill | Outcome |
+## Ask for work in plain language
+
+- “Turn these release notes into an X post for technical founders. Keep every claim verifiable.”
+- “Build a seven-post thread from this article. Give each post one job and avoid clickbait.”
+- “Draft three useful replies to these customer questions; flag anything that needs an owner.”
+- “Analyze this export and give me observations, hypotheses, and one next test.”
+
+## The 12 skills
+
+| Skill | Use it for |
 | --- | --- |
-| Post writer | Draft a source-faithful post with one audience, one purpose, and one supported claim. |
-| Content planner | Turn goals and supplied evidence into a calendar of testable content briefs. |
-| Reply handler | Draft useful, owner-aware replies to supplied comments or mentions. |
-| Humanizer | Improve rhythm and specificity without adding claims or fake personal experience. |
-| Thread Architect | Design a X-native thread architect from supplied material. |
-| Repurposer | Adapt supplied source material into platform-native drafts without changing facts. |
-| Profile optimizer | Audit supplied profile copy for clarity, audience fit, and credible positioning. |
-| Community manager | Triage supplied conversations, flag risks, and prepare response queues. |
-| Analytics | Separate observations, hypotheses, and next tests from supplied exports. |
-| Social listener | Synthesize supplied posts, search results, or transcripts without claiming live access. |
-| Quote Post Analyst | Produce a reviewable X quote post analyst from supplied material. |
-| Safety review | Review a draft for unsupported claims, disclosures, tone, and approval readiness. |
+| Post writer | A concise, evidence-led post with a clear audience and supported claim. |
+| Thread architect | A structured thread with a truthful opening, progression, and close. |
+| Quote-post analyst | Commentary that contributes a real, source-faithful point of view. |
+| Reply handler | Owner-aware replies to supplied comments and mentions. |
+| Content planner | Testable themes, briefs, cadence, and measurement questions. |
+| Humanizer | Better rhythm and specificity without fabricated experience. |
+| Repurposer | X-native adaptations that retain the source’s meaning. |
+| Profile optimizer | Clearer bio, positioning, and proof points from supplied facts. |
+| Community manager | Triage queues, response priorities, risks, and escalation routes. |
+| Social listener | Synthesis from material you provide; never a claim of live monitoring. |
+| Analytics | Findings separated from hypotheses and follow-up experiments. |
+| Safety review | Claim, disclosure, tone, and approval-readiness check. |
 
 ## Optional: schedule or publish with SocialBu
 
-X Skills writes and reviews; [SocialBu](https://socialbu.com/publish) is an optional execution layer. Connect the intended X account in SocialBu, add its MCP server (`https://socialbu.com/mcp`) to a compatible client, then draft first. Before any save, schedule, or publish request, the agent must show the exact final content, account, media, action, and time. Only a fresh confirmation for that unchanged preview authorizes execution. See [the publishing boundary](references/socialbu-publishing.md).
+X Skills is the writing and review layer. [SocialBu](https://socialbu.com/publish) is optional for account connection, drafts, scheduling, and publishing.
 
-## Verify
+1. In SocialBu, open **Accounts** and connect the intended X account.
+2. Add `https://socialbu.com/mcp` to your MCP-compatible client and complete OAuth in your own browser.
+3. Ask the agent to create or refine a draft first.
+4. Before any SocialBu action, the agent must show the exact final text, account, links/media, action (**save draft**, **schedule**, or **publish now**), and time/timezone.
+5. Only a fresh confirmation for that unchanged preview permits execution. Any edit requires a new confirmation.
+
+You can also copy an approved draft into SocialBu manually. See [the publishing boundary](references/socialbu-publishing.md).
+
+## Verify a checkout
+
 ```bash
 ./scripts/validate.sh
 python3 -m unittest discover -s tests
 python3 scripts/selftest.py
 ```
 
-## Contribute
+## Contribute and license
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md), [CLAUDE.md](CLAUDE.md), and [SECURITY.md](SECURITY.md). This independent project is not affiliated with X, Claude, Codex, or SocialBu.
+Read [CONTRIBUTING.md](CONTRIBUTING.md), [CLAUDE.md](CLAUDE.md), and [SECURITY.md](SECURITY.md). MIT licensed; see [LICENSE](LICENSE). This independent project is not affiliated with X, Claude, Codex, or SocialBu.
 
 ## Related open-source skill bundles
 
-- [LinkedIn Skills](https://github.com/samalyxx/linkedin-skills)
-- [X Skills](https://github.com/samalyxx/x-skills)
-- [Instagram Skills](https://github.com/samalyxx/instagram-skills)
-- [YouTube Skills](https://github.com/samalyxx/youtube-skills)
-- [Threads Skills](https://github.com/samalyxx/threads-skills)
-- [TikTok Skills](https://github.com/samalyxx/tiktok-skills)
-- [Facebook Skills](https://github.com/samalyxx/facebook-skills)
+Part of a family of platform-specific, draft-first skill bundles for Claude Code and Codex:
 
-## License
-MIT. See [LICENSE](LICENSE).
+- [LinkedIn Skills](https://github.com/samalyxx/linkedin-skills) — professional content and engagement
+- [Instagram Skills](https://github.com/samalyxx/instagram-skills) — carousels, Reels, captions, and community
+- [YouTube Skills](https://github.com/samalyxx/youtube-skills) — videos, thumbnails, metadata, and channel planning
+- [Threads Skills](https://github.com/samalyxx/threads-skills) — conversational posts and reply series
+- [TikTok Skills](https://github.com/samalyxx/tiktok-skills) — short-form concepts, hooks, scripts, and responses
+- [Facebook Skills](https://github.com/samalyxx/facebook-skills) — Pages, events, campaigns, and community work
